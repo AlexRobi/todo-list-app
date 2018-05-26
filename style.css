@@ -1,0 +1,85 @@
+/*
+ * CONTENTS
+*/
+
+
+
+
+/*
+ * SETTINGS
+ * Global...............Globally-available variables and config.
+*/
+
+
+
+/*
+ * TOOLS
+ * Mixins...............Useful mixins.
+*/
+
+
+
+
+
+/*
+ * GENERIC
+ * Normalize.css........A level playing field.
+ * Box-sizing...........Better default `box-sizing`.
+*/
+
+
+
+
+
+/*
+ * BASE
+ * Headings.............H1–H6 styles.
+*/
+
+
+
+
+
+/*
+ * OBJECTS
+ * Wrappers.............Wrapping and constraining elements.
+ */
+
+ /*------------------------------------*\
+  #NAVIGATION COLUMN LEFT
+\*------------------------------------*/
+html, body {
+  height: 100%;
+  background-color: #fafafa;
+}
+
+
+
+.nav-col-left {
+  background-color: #fafafa;
+  border-right: 1px solid #f1f1f1;
+}
+
+.main-window {
+  background-color: #fff;
+  border-right: 1px solid #f1f1f1;
+}
+
+
+
+
+/*
+ * COMPONENTS
+ * Page-head............The main page header.
+ * Page-foot............The main page footer.
+ * Buttons..............Button elements.
+ */
+
+
+
+
+
+ /*
+ * TRUMPS
+ * Text.................Text helpers.
+ */
