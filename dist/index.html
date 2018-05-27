@@ -21,12 +21,30 @@
 
     <div class="wrapper  container  h-100">
       <div class="row no-gutters h-100">
-        <div class="col-md-4  nav-col-left h-100">
-          <div>create new project +</div>
-          <div>list of projects</div>
+        <div class="col-md-4  nav-col-left  h-100">
+
+          <div class="project-title">
+            <div class="project-collapse project-collapse-js" data-toggle="collapse" href="#collapseProject" role="button"
+              aria-expanded="false" aria-controls="collapseProject">
+              <i class="fas  fa-chevron-up"></i>
+              <h5 class="project-title-text">Projects</h5>
+            </div>
+            <i class="fas  fa-plus  fa-plus-js"></i>
+          </div>
+
+          <div class="collapse" id="collapseProject">
+            <form class="form-project  form-project-js  d-none">
+              <input class="input-name-project" type="text" name="project-name" placeholder="Project name">
+              <button class="btn  save-form-project-js">Add project</button>
+              <button type="button" class="btn  close-form-project-js">Cancel</button>
+            </form>
+            <div class="projects-list">
+
+            </div>
+          </div>
 
         </div>
-        <div class="col-md-8  main-window h-100">
+        <div class="col-md-8  main-window  h-100">
           <div>main window</div>
         </div>
       </div>
