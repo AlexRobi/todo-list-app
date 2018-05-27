@@ -60,6 +60,60 @@ html, body {
   border-right: 1px solid #f1f1f1;
 }
 
+.project-title {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #f1f1f1;
+}
+.project-title:hover {
+  text-decoration: none;
+  background-color: #f7f7f7;
+}
+
+.project-collapse {
+  cursor: pointer;
+}
+
+.project-title-text {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-left: 10px;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.fa-plus, .fa-chevron-up {
+  color:#aeaeae;
+}
+.fa-plus:hover {
+  color: #606060;
+}
+/* Animates the chevron when project-title is clicked. */
+.fa-chevron-up-open {
+  transform: rotate( -180deg);
+  transition: transform 300ms ease;
+}
+.fa-chevron-up-close {
+  transform: rotate( -360deg);
+  transition: transform 300ms ease;
+}
+
+
+
+.project {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.project__name {
+  cursor: pointer;
+}
+
+
+
+
 .main-window {
   background-color: #fff;
   border-right: 1px solid #f1f1f1;
