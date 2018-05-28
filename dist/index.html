@@ -19,24 +19,61 @@
 
   <body>
 
-    <div class="wrapper  container  h-100">
-      <div class="row no-gutters h-100">
-        <div class="col-md-4  nav-col-left  h-100">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-          <div class="project-title">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="container">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="wrapper  container">
+      <div class="row">
+        <div class="col-md-4 col-xl-3  nav-col-left">
+
+          <div class="project-column">
             <div class="project-collapse project-collapse-js" data-toggle="collapse" href="#collapseProject" role="button"
               aria-expanded="false" aria-controls="collapseProject">
-              <i class="fas  fa-chevron-up"></i>
-              <h5 class="project-title-text">Projects</h5>
+              <i class="fas  fa-chevron-down"></i>
+              <h5 class="project-column-text">Projects</h5>
             </div>
             <i class="fas  fa-plus  fa-plus-js"></i>
           </div>
 
-          <div class="collapse" id="collapseProject">
+          <div class="collapse collapse-js" id="collapseProject">
             <form class="form-project  form-project-js  d-none">
               <input class="input-name-project" type="text" name="project-name" placeholder="Project name">
-              <button class="btn  save-form-project-js">Add project</button>
-              <button type="button" class="btn  close-form-project-js">Cancel</button>
+              <button class="btn  btn-dark  save-form-project-js">Add project</button>
+              <button type="button" class="btn  btn-light  close-form-project-js">Cancel</button>
             </form>
             <div class="projects-list">
 
@@ -44,8 +81,10 @@
           </div>
 
         </div>
-        <div class="col-md-8  main-window  h-100">
-          <div>main window</div>
+        <div class="col-md-8 col-xs-9  main-window">
+          <h5 class="project-info__title"></h5>
+          <div class="project-info-wrapper"></div>
+          <div class="project__add-task"></div>
         </div>
       </div>
     </div>
