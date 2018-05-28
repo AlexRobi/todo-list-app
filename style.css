@@ -9,7 +9,12 @@
  * SETTINGS
  * Global...............Globally-available variables and config.
 */
-
+@media (min-width: 768px) {
+  .wrapper, .wrapper .row,
+  .nav-col-left, .main-window {
+    height: 100% !important;
+  }
+}
 
 
 /*
@@ -55,18 +60,31 @@ html, body {
 
 
 
+.navbar {
+  padding: 0;
+}
+
+
+
+
 .nav-col-left {
   background-color: #fafafa;
   border-right: 1px solid #f1f1f1;
+  padding-top: 20px;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 0.95em;
+  -moz-user-select: none;
+  user-select: none;
 }
 
-.project-title {
+.project-column {
   display: flex;
   justify-content: space-between;
   padding: 12px;
   border-bottom: 1px solid #f1f1f1;
 }
-.project-title:hover {
+.project-column:hover {
   text-decoration: none;
   background-color: #f7f7f7;
 }
@@ -75,7 +93,7 @@ html, body {
   cursor: pointer;
 }
 
-.project-title-text {
+.project-column-text {
   display: inline-block;
   margin-bottom: 0;
   margin-left: 10px;
@@ -83,33 +101,95 @@ html, body {
   font-weight: bold;
 }
 
-.fa-plus, .fa-chevron-up {
+.project-column .collapse,
+.project-column .collapsing {
+  padding: 0 10px;
+  margin-top: 5px;
+}
+
+.project-column .fa-plus, .fa-chevron-down, .fa-trash-alt {
   color:#aeaeae;
 }
-.fa-plus:hover {
+.project-column .fa-plus:hover,
+.fa-trash-alt:hover {
   color: #606060;
+  cursor: pointer;
 }
-/* Animates the chevron when project-title is clicked. */
-.fa-chevron-up-open {
+/* Animates the chevron when project-column is clicked. */
+.fa-chevron-down-open {
   transform: rotate( -180deg);
   transition: transform 300ms ease;
 }
-.fa-chevron-up-close {
+.fa-chevron-down-close {
   transform: rotate( -360deg);
   transition: transform 300ms ease;
 }
 
+/* Project form */
 
+.input-name-project {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+.btn-dark {
+  padding: 3px 10px;
+  font-weight: bold;
+  font-size: 0.95em;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.btn-light {
+  border: inherit;
+  padding: 0;
+  margin: 0 10px;
+  color: #555;
+  font-size: 0.95em;
+}
+
+.btn-light:hover {
+  text-decoration: underline;
+  background-color: transparent;
+  border: inherit;
+}
 
 .project {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 7px 15px;
+}
+
+.project-active {
+  background-color: #fff;
+  font-weight: bold;
 }
 
 .project__name {
   cursor: pointer;
+  width: 100%;
 }
+
+
+.add-project-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 7px 15px;
+  cursor: pointer;
+}
+
+.add-project-wrapper:hover .add-project__text {
+  text-decoration: underline;
+}
+
+.add-project__text {
+  margin-left: 20px;
+}
+
+
 
 
 
@@ -117,6 +197,8 @@ html, body {
 .main-window {
   background-color: #fff;
   border-right: 1px solid #f1f1f1;
+  padding-top: 20px;
+  padding-left: 20px;
 }
 
 
