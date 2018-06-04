@@ -1,70 +1,40 @@
-/*
- * CONTENTS
-*/
-
-
-
-
-/*
- * SETTINGS
- * Global...............Globally-available variables and config.
-*/
 @media (min-width: 768px) {
   .wrapper, .wrapper .row,
   .nav-col-left, .main-window {
-    height: 100% !important;
+    height: 100%;
   }
 }
 
 
-/*
- * TOOLS
- * Mixins...............Useful mixins.
-*/
 
+.low {
+  color: #008122;
+}
+.medium {
+  color: #ffcd36;
+}
+.high {
+  color: #fc8218;
+}
+.critical {
+  color: #ff0020;
+}
 
+input, textarea {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+.form-control:focus {
+  box-shadow: none;
+  border: 1px solid #ddd;
+}
 
-
-
-/*
- * GENERIC
- * Normalize.css........A level playing field.
- * Box-sizing...........Better default `box-sizing`.
-*/
-
-
-
-
-
-/*
- * BASE
- * Headings.............H1–H6 styles.
-*/
-
-
-
-
-
-/*
- * OBJECTS
- * Wrappers.............Wrapping and constraining elements.
- */
-
- /*------------------------------------*\
-  #NAVIGATION COLUMN LEFT
-\*------------------------------------*/
 html, body {
   height: 100%;
   background-color: #fafafa;
+  font-family: 'Inconsolata',
+  monospace;
 }
-
-
-
-.navbar {
-  padding: 0;
-}
-
-
 
 
 .nav-col-left {
@@ -124,7 +94,10 @@ html, body {
   transform: rotate( -360deg);
   transition: transform 300ms ease;
 }
-
+.fa-circle,
+.fa-check-circle {
+  cursor: pointer;
+}
 /* Project form */
 
 .input-name-project {
@@ -190,32 +163,172 @@ html, body {
 }
 
 
-
-
-
-
-.main-window {
-  background-color: #fff;
-  border-right: 1px solid #f1f1f1;
-  padding-top: 20px;
-  padding-left: 20px;
+.projects-list {
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 10px;
 }
 
 
 
 
+
 /*
- * COMPONENTS
- * Page-head............The main page header.
- * Page-foot............The main page footer.
- * Buttons..............Button elements.
- */
+  MAIN WINDOWS, TASK DISPLAY
+*/
+
+.main-window {
+  background-color: #fff;
+  border-right: 1px solid #f1f1f1;
+  font-size: 0.9em;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .main-window {
+    padding-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+
+.project-info__title {
+  padding-top: 12px;
+  font-weight: bold;
+  margin-bottom: 11px;
+}
+
+
+.task-list__header {
+  display: flex;
+  font-weight: bold;
+}
 
 
 
+.add-task {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 10px;
+}
+.add-task:hover div {
+  text-decoration: underline;
+}
+
+.add-task .fa-plus {
+  margin-right: 20px;
+}
 
 
- /*
- * TRUMPS
- * Text.................Text helpers.
- */
+
+.task-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 13px;
+  padding-bottom: 13px;
+}
+.task-title,
+.task-description,
+.task-due-date {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.task-card i {
+  font-size: 1.1em;
+}
+
+.task-card:hover {
+  background-color: #fafafa;
+}
+
+.form-task {
+  border-top: 1px solid #f0f0f0;
+}
+
+.input-title-task {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.input-description-task {
+  margin-bottom: -10px;
+}
+
+.main-window input,
+.main-window textarea {
+  border: 1px solid #ddd;
+  box-shadow: inherit;
+  font-size: 0.9em;
+}
+.main-window input:focus,
+.main-window textarea:focus {
+  border: 1px solid #ddd;
+  box-shadow: inherit;
+}
+
+
+.modal-header {
+align-items: center;
+border-bottom: 0;
+}
+
+.task-modal__title {
+  font-weight: bold;
+}
+
+.task-modal h5 {
+  margin-bottom: 0;
+  border-bottom: 1px solid #e9ecef;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.task-modal__checkbox {
+  font-size: 1.5em;
+  margin-right: 15px;
+}
+
+.task-modal__description,
+.task-modal__due-date,
+.task-modal__priority {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.modal-footer {
+  border-top: 0;
+}
+
+.task-modal .btn-light {
+  margin-right: 20px;
+}
+
+.edit-task__description,
+.edit-task__due-date,
+.edit-task__priority {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+
+
+.footer {
+  position: relative;
+  height: 40px;
+  margin-top: -41px;
+  background-color: #fafafa;
+  border-top: 1px solid #f1f1f1;
+  line-height: 40px;
+}
+
+.footer .container {
+  display: flex;
+  justify-content: space-between;
+}

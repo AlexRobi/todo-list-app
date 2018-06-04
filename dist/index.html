@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Bootstrap CSS -->
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
       integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
       crossorigin="anonymous">
@@ -19,50 +20,13 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-        aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <div class="container">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
     <div class="wrapper  container">
       <div class="row">
         <div class="col-md-4 col-xl-3  nav-col-left">
 
-          <div class="project-column">
-            <div class="project-collapse project-collapse-js" data-toggle="collapse" href="#collapseProject" role="button"
+          <div class="project-column project-collapse project-collapse-js" data-toggle="collapse" href="#collapseProject" role="button"
               aria-expanded="false" aria-controls="collapseProject">
+            <div>
               <i class="fas  fa-chevron-down"></i>
               <h5 class="project-column-text">Projects</h5>
             </div>
@@ -81,13 +45,117 @@
           </div>
 
         </div>
+
+
+
         <div class="col-md-8 col-xs-9  main-window">
           <h5 class="project-info__title"></h5>
-          <div class="project-info-wrapper"></div>
-          <div class="project__add-task"></div>
+          <div class="task-list__header  task-list__header-js  d-none">
+            <div class="col-1"></div>
+            <div class="col-11  col-md-3">Title</div>
+            <div class="d-none  d-md-block  col-md-3">Description</div>
+            <div class="d-none  d-md-block  col-md-2">Schedule</div>
+            <div class="d-none  d-md-block  col-md-1">Priority</div>
+          </div>
+          <div class="task-list-wrapper  task-list-wrapper-js"></div>
+          <div class="project__add-task  project__add-task-js  d-none">
+            <div class="add-task  add-task-js">
+              <i class="fas fa-plus"></i>
+              <div>Add Task</div>
+            </div>
+            <form class="form-task  form-task-js  d-none">
+              <input class="input-title-task  form-control" type="text" name="task-title" placeholder="Title">
+              <textarea class="input-description-task  form-control" type="text" name="task-description" placeholder="(optional) Description"></textarea>
+              <br>
+              <label>Schedule:</label>
+              <input class="input-dueDate-task" type="date" name="task-date" placeholder="Task date">
+              <br>
+              <label>Priority:</label>
+              <select class="input-priority-task" name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="critical">Critical</option>
+              </select>
+              <br>
+              <button class="btn  btn-dark  save-form-task-js">Add task</button>
+              <button type="button" class="close-form-task-js  btn  btn-light">Cancel</button>
+            </form>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal  fade  task-modal" id="taskModal" tabindex="-1" role="dialog" aria-labelledby="taskModalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content  modal-content-js">
+          <div class="modal-header">
+            <div class="task-modal__checkbox"></div>
+            <div class="task-modal__title" id="exampleModalLongTitle"></div>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h5>Description:</h5>
+            <div class="task-modal__description"></div>
+            <h5>Schedule:</h5>
+            <div class="task-modal__due-date"></div>
+            <h5>Priority:</h5>
+            <div class="task-modal__priority"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn  btn-light" data-dismiss="modal">Close</button>
+            <button type="button" class="btn  btn-dark  btn-edit-task-js"><i class="far fa-edit"></i> Edit</button>
+          </div>
+        </div>
+        <div class="modal-content  modal-content-edit-js  d-none">
+          <form>
+            <div class="modal-header">
+              <input type="text" class="edit-task__title  edit-task__title-js  form-control" name="" placeholder="Ttile">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <h5>Description:</h5>
+              <textarea class="edit-task__description  edit-task__description-js  form-control" type="text" name="" placeholder="(optional) Description"></textarea>
+              <h5>Schedule:</h5>
+              <input class="edit-task__due-date  edit-task__due-date-js" type="date" name="" placeholder="Task date">
+              <h5>Priority:</h5>
+              <select class="edit-task__priority  edit-task__priority-js" name="priority">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="critical">Critical</option>
+              </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn  btn-light  btn-cancel-edit-js">Cancel</button>
+              <button type="button" class="btn  btn-dark  btn-save-edit-js">
+                <i class="far fa-edit"></i> Save Changes</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
+
+
+    <footer class="footer">
+      <div class="container">
+        <div>Created by
+          <a href="http://pacific-tor-56437.herokuapp.com" target="_blank">Alexis Robillart</a>
+        </div>
+        <div>
+          <i class="fab fa-github"></i>
+          <a href="#">source code</a>
+        </div>
+      </div>
+    </footer>
 
 
 
